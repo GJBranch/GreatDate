@@ -2,7 +2,6 @@
 # http://git-scm.com/docs/gitignore
 
 node_modules
-www
 .tmp
 .sass-cache
 coverage
@@ -12,3 +11,4 @@ plugins
 *.swo
 *.log
 *.DS_Store
+.idea
