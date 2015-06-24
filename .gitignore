@@ -11,4 +11,5 @@ plugins
 *.swo
 *.log
 *.DS_Store
+typings
 .idea

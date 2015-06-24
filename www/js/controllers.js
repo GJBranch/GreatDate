@@ -1,6 +1,6 @@
 angular.module('GreatDate.controllers', [])
 
-.controller('GreatDateController', function($scope, $ionicModal, $timeout) {
+  .controller('GreatDateController', function ($scope, $ionicModal, $timeout) {
   
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -13,49 +13,44 @@ angular.module('GreatDate.controllers', [])
   $scope.loginData = {};
 
   // Create the login modal that we will use later
-  $ionicModal
-      .fromTemplateUrl('templates/login.html', {
+  $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
-     })
-      .then(function(modal) {
+  }).then(function (modal) {
     $scope.modal = modal;
   });
 
   // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
+  $scope.closeLogin = function () {
     $scope.modal.hide();
   };
 
   // Open the login modal
-  $scope.login = function() {
+  $scope.login = function () {
     $scope.modal.show();
   };
 
   // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
+  $scope.doLogin = function () {
     console.log('Doing login', $scope.loginData);
 
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
-    $timeout(function() {
+    $timeout(function () {
       $scope.closeLogin();
     }, 1000);
   };
 })
 
-.controller('PlaylistsController', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Hip-Hop', id: 6 }
+  .controller('RecommendationsController', function ($scope) {
+  $scope.recommendations = [
+    { description: 'Reggae', userId: 1, id: 1 },
+    { description: 'Chill', userId: 2, id: 2 },
+    { description: 'Dubstep', userId: 3, id: 3 },
+    { description: 'Indie', userId: 4, id: 4 },
+    { description: 'Rap', userId: 5, id: 5 },
+    { description: 'Hip-Hop', userId: 6, id: 6 }
   ];
-  console.log('Playlists', $scope.playlists);
 })
 
-.controller('PlaylistController', function($scope, $stateParams) {
-    console.log('Playlist controller');
-
+  .controller('RecommendationController', function ($scope, $stateParams) {
 });

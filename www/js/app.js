@@ -6,12 +6,12 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('GreatDate', ['ionic', 'GreatDate.controllers'])
 
-.run(function($ionicPlatform, $rootScope) {
+.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
+
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-
-     if (window.cordova && window.cordova.plugins.Keyboard) {
+    if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
     if (window.StatusBar) {
@@ -48,25 +48,25 @@ angular.module('GreatDate', ['ionic', 'GreatDate.controllers'])
       }
     }
   })
-    .state('greatDate.playlists', {
-      url: "/playlists",
+    .state('greatDate.recommendations', {
+      url: "/recommendations",
       views: {
         'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsController'
+          templateUrl: "templates/recommendations.html",
+          controller: 'RecommendationsController'
         }
       }
     })
 
   .state('greatDate.single', {
-    url: "/playlists/:playlistId",
+    url: "/recommendations/:recommendationId",
     views: {
       'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistController'
+        templateUrl: "templates/recommendation.html",
+        controller: 'RecommendationController'
       }
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/recommendations');
 });
