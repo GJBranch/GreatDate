@@ -48,31 +48,31 @@ angular.module('GreatDate', ['ionic', 'GreatDate.controllers', 'GreatDate.servic
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.venues', {
+      url: '/venues',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-venues': {
+          templateUrl: 'templates/tab-venues.html',
+          controller: 'VenuesController'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
+    .state('reviews', {
+      url: '/reviews/:venue',
+      // views: {
+      //   'reviews': {
+          templateUrl: 'templates/reviews.html',
+          controller: 'ReviewsController'
+        // }
+      // }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.settings', {
+    url: '/settings',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-settings': {
+        templateUrl: 'templates/tab-settings.html',
+        controller: 'SettingsController'
       }
     }
   });

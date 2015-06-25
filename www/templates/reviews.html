@@ -1,0 +1,14 @@
+<ion-view view-title="Reviews for {{venue}}">
+  <ion-content>
+    <ion-list>
+      <!--<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="review in reviews" type="item-text-wrap"
+      data-ui-sref="tab.reviews({id: venue.id})">-->
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="review in reviews" type="item-text-wrap">
+        <img ng-src="{{review.face}}">
+        <h2>{{review.reviewer}}</h2>
+        <p>{{review.review}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

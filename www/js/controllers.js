@@ -1,8 +1,8 @@
 angular.module('GreatDate.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+  .controller('DashCtrl', function ($scope) { })
 
-.controller('ChatsCtrl', function($scope, Chats) {
+  .controller('VenuesController', function ($scope, Reviews) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -10,18 +10,30 @@ angular.module('GreatDate.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  }
+  var reviews = Reviews.all();
+  var uniqueVenues = _.uniq(reviews, 'venue');
+  $scope.venues = _.map(uniqueVenues, function getAverageRating(review) {
+    var venueRatings = _.where(reviews, { venue: review.venue });
+    var totalRating = _.chain(venueRatings)
+      .pluck('rating')
+      .sum()
+      .value();
+
+    var averageRating = totalRating / venueRatings.length;
+    review.averageRating = averageRating;
+    return review;
+  });
+
+  $scope.remove = function remove(venue) {
+    Reviews.remove(venue);
+  };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+  .controller('ReviewsController', function ($scope, $stateParams, Reviews) {
+  $scope.reviews = Reviews.get($stateParams.venue);
 })
 
-.controller('AccountCtrl', function($scope) {
+  .controller('SettingsController', function ($scope) {
   $scope.settings = {
     enableFriends: true
   };
