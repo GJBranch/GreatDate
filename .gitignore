@@ -1,15 +1,6 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
-node_modules
-.tmp
-.sass-cache
-coverage
-platforms
-plugins
-*.swp
-*.swo
-*.log
-*.DS_Store
-typings
-.idea
+node_modules/
+platforms/
+plugins/
