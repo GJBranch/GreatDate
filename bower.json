@@ -5,6 +5,13 @@
     "ionic": "driftyco/ionic-bower#1.0.0"
   },
   "dependencies": {
+    "angular": "1.4.0",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.4",
     "lodash": "~3.9.3"
+  },
+  "resolutions": {
+    "angular-ui-router": "~0.2.15",
+    "angular": "1.4.0"
   }
 }

@@ -1,0 +1,1 @@
+{"projectName":"GreatDate","usingClientFramework":true,"clientFramework":"Angular","usingServerFramework":false,"testFramework":"mocha + chai","testFrameworks":["mocha + chai"],"testRunner":"mocha","features":["policy","dashboard","login"]}
